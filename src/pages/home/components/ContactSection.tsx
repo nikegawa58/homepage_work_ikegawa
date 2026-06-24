@@ -30,17 +30,19 @@ export default function ContactSection() {
     setSubmitting(true);
 
     try {
-      const res = await fetch('https://readdy.ai/api/form/d8sd9btcg4qspo1262c0', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           name,
           email,
           subject,
           message,
           phone: (formData.get('phone') as string).trim(),
           company: (formData.get('company') as string).trim(),
-        }).toString(),
+        }),
       });
 
       if (res.ok) {
