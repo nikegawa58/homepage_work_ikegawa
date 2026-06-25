@@ -32,7 +32,7 @@ export async function onRequestPost(context: any) {
     await resend.emails.send({
       from: 'contact@ike-unicloud.com',
       to: body.email,
-      subject: '【UniCloud】お問い合わせいただきありがとうございます',
+      subject: '【Unicloud】お問い合わせいただきありがとうございます',
       html: `
         <p>${body.name} 様</p>
 
@@ -83,7 +83,7 @@ export async function onRequestPost(context: any) {
         <hr>
 
       <p>
-          UniCloud<br>
+          Unicloud<br>
           池川 尚樹
         </p>
       `,
